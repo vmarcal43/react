@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './popUp.css'
 
-// classe resposável pela aparecimento do popup quando se clica na imagem
+// classe do poppup
 class Popup extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +14,7 @@ class Popup extends Component {
 
     }
 
-    // chamar a função que fecha o popUp
+    // facha o poppup
 
     popupClose() {
         this.props.popupClose();

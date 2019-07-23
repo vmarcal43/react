@@ -8,7 +8,7 @@ class Photo extends Component {
         this.Click = this.Click.bind(this);
     }
     Click(){
-        // aceder à propriedade na Página principal
+        // acede à propriedade na Página principal
         this.props.Click(this.props.id);
     }
 render (){

@@ -19,7 +19,7 @@ class FrontPage extends Component {
             isauthenticated: false
 
         }
-        // sempre que clik correr o this tem de fazer referencia ao this da pagina principal
+        // sempre que ouver um click o this tem de fazer referencia ao this da pagina principal
         this.Click = this.Click.bind(this);
         this.popupClose = this.popupClose.bind(this);
         this.searchBy = this.searchBy.bind(this);
@@ -38,21 +38,21 @@ class FrontPage extends Component {
         
  
     }
-    // axios.get vais buscar tudo o que está na API
+    // axios.get vai buscar os dados da api do professor
     // funcao para filtar os dados
     async searchBy(evt) {
         evt.preventDefault()
         let response = await axios.get('https://ipt-ti2-iptgram.azurewebsites.net/api/posts?query=' + this.state.text);
 
         let postArray = response.data;
-        // o setState faz com que a pagina inicial seja obrigada a renderizar de novo.(Sempre)
+        // o setState obriga a pagina a fazer reload (Sempre)
         this.setState({
             posts: postArray,
             text: ''
         });
 
     }
-// vai buscar todos os posts
+// vai buscar os posts
     async getPosts(){
         let response = await axios.get('https://ipt-ti2-iptgram.azurewebsites.net/api/posts');
         
@@ -69,7 +69,7 @@ class FrontPage extends Component {
 
 
 
-    // função que permite clicar na image e aparecer as informações
+    // função que permite clicar na foto e aparecer os details dela
     async Click(id) {
         let srt = 'https://ipt-ti2-iptgram.azurewebsites.net/api/posts/' + id
         let response = await axios.get(srt);
@@ -115,7 +115,7 @@ class FrontPage extends Component {
         })
     }
     // função para o login
-    // login com as credencias fornecidas pelo professor
+    // login com os dados dados pelo professor
     async login(evt) {
         evt.preventDefault();
         let obj = {
@@ -132,7 +132,7 @@ class FrontPage extends Component {
             }
         });
 
-        // caso a autenticação tenha sucesso
+        // a autenticaçao teve sucesso?
         if (response.status === 200) {
 
             this.setState({
@@ -148,7 +148,7 @@ class FrontPage extends Component {
 
     }
 
-    // função para o logout
+    // logout
 
     async logout(evt) {
         evt.preventDefault();
