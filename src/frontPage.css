@@ -1,0 +1,45 @@
+.FrontPage{
+    
+    background-color: lightskyblue;
+   
+
+  
+    
+}
+
+.FrontPage-Login {
+    background: #ecf0f1;
+    border: #ccc 1px solid;
+    border-bottom: #ccc 2px solid;
+    padding: 8px;
+    width: 250px;
+    color: #AAAAAA;
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+}
+.FrontPage-show {
+    border-radius: 0 0 5px 5px;
+    border: 2px solid gray;
+}
+
+.FrontPage-Logout {
+    margin-bottom: 10px;
+}
+
+.FrontPage-show h2 {
+    padding-top: 15px;
+}
+
+.SearchBox{
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin: 5px 0 5px 0;
+ 
+}
+
+.BoxForSearch{
+    position: absolute;
+    top : 4%;
+    
+}
