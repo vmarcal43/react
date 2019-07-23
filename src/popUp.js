@@ -40,11 +40,12 @@ MyCommentSub (evt){
     render() {
         return (
             <div className="popup">
-                <img src={this.props.image} />
-                <h1>{"👤 "} {this.props.user}</h1>
-                <h2>{"📅 "} {this.props.date.substring(0, this.props.date.indexOf("T"))}</h2>
-                <h2> {}{this.props.subtitle}</h2>
-                <h2>{"👍 "} {this.props.likes}</h2>
+                <div className='popup_inner'>
+                    <img src={this.props.image} height="200" />
+                    <h4>{"👽 "} {this.props.user}</h4>
+                    <h4>{"📜 "}{this.props.subtitle}</h4>
+                    <h4>{"🗓️ "} {this.props.date.substring(0, this.props.date.indexOf("T"))}</h4>                   
+                    <h4>{"👍 "} {this.props.likes}</h4>
                
 
                 {
@@ -54,18 +55,18 @@ MyCommentSub (evt){
                             // vai devolver o texto, o user e a data do comentário
                             return ([
 
-                                <div className='popup'>
-                                    <div className='popup_inner'>
-                                        <tr>
-                                            <td>
-                                                <h4>{"📝"}{c.text}</h4>
-                                            </td>
-                                        </tr>
-                                        <h4>{c.user.name}</h4>
-                                        <h4>{c.postedAt.substring(0, this.props.date.indexOf("T"))}</h4>
-                                        <button onClick={this.props.closePopup}>close me</button>
-                                    </div>
-                                </div>
+
+                                <table width="200" border="1" align="left" bgcolor="lightskyblue">
+                                            <tr>
+                                                <td>
+                                            <h4>{"📜 "}{c.text}</h4>
+                                                </td>
+                                            </tr>
+                                            <h4>{"👽 "}{c.user.name}</h4>
+                                            <h4>{"🗓️ "}{c.postedAt.substring(0, this.props.date.indexOf("T"))}</h4>
+
+                                        </table>
+                                   
 
                               
                                
@@ -77,9 +78,9 @@ MyCommentSub (evt){
                 <form onSubmit = {this.MyCommentSub}> 
                     <input className="comment" type="text" value ={this.state.NewComment} onChange = {this.MyComment} placeholder="Write your comment..."/>
                 </form>
-                <button onClick={this.popupClose}>❌</button>
+                    <button onClick={this.popupClose}>❌</button>
 
-
+                </div>
             </div>
 
         );

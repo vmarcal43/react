@@ -211,7 +211,7 @@ class FrontPage extends Component {
                     (this.state.isauthenticated) ?
 
                         <form className="FrontPage-Logout" onSubmit={this.logout}>
-                            <button className="btn-logout" type="submit" >Logout</button>
+                            <button className="btn-logout" type="submit"  >Logout</button>
                         </form>
                         :
 
@@ -219,6 +219,7 @@ class FrontPage extends Component {
                             <form className="FrontPage-Login" onSubmit={this.login}>
                                 <input type="text" name="Username" onChange={this.Change} value={this.state.Username} />
                                 <input type="password" name="Password" onChange={this.Change} value={this.state.Password} />
+                                <br/>
                                 <button type="submit">Login</button>
 
 
@@ -255,10 +256,10 @@ class FrontPage extends Component {
 
                                     </form>
 
-                                    <h2>{"👤 "}{p.user.name}</h2>
-                                    <h3>{p.caption}</h3>
                                     <Photo id={p.id} Click={this.Click} />
-                                    <h3>{"📅 "}{p.postedAt.substring(0, p.postedAt.indexOf("T"))}</h3>
+                                    <h2>{"👽 "}{p.user.name}</h2>
+                                    <h3>{"📜 "}{p.caption}</h3>                                  
+                                    <h3>{"🗓️ "}{p.postedAt.substring(0, p.postedAt.indexOf("T"))}</h3>
                                    <button onClick={()=>this.PutLike(p.id)}>{"👍 " +p.likes}</button>
                                 </div>
 
